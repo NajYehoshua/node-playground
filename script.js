@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const bcrypt = require("bcrypt");
+const fs = require("fs");
+const path = require("path");
 const app = express();
 const upload = multer();
 
@@ -53,6 +55,9 @@ const start = () => {
   app.listen(7000, () => {
     console.log("Server is up and running!");
   });
+
+  console.log(path.resolve(__dirname, "public"));
+  console.log(path.resolve(__dirname, "node_modules"));
 };
 
 start();
